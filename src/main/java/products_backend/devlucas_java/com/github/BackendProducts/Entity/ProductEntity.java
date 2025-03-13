@@ -1,4 +1,4 @@
-package products_backend.devlucas_java.com.github.BackendProducts.Endity;
+package products_backend.devlucas_java.com.github.BackendProducts.Entity;
 
 
 import jakarta.persistence.Column;
@@ -14,7 +14,7 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "products")
-public class ProductEndity {
+public class ProductEntity {
 
 
     @Id
