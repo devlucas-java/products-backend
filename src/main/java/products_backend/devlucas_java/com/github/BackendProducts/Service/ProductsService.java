@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import products_backend.devlucas_java.com.github.BackendProducts.Entity.ProductEntity;
 import products_backend.devlucas_java.com.github.BackendProducts.Repository.ProductsRepository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -21,10 +22,6 @@ public class ProductsService {
     // save product
     public ProductEntity saveProduct(ProductEntity product) {
         return productsRepository.save(product);
-    }
-    // get all products
-    public ProductEntity[] getAllProducts() {
-        return productsRepository.findAll().toArray(new ProductEntity[0]);
     }
     // get product by id
     public ProductEntity getByIdProduct(UUID id) {
@@ -43,7 +40,12 @@ public class ProductsService {
         return productsRepository.save(product);
     }
     // get product by name
-    public ProductEntity getByNameProduct(String name) {
-        return productsRepository.findByName(name);
+    public List<ProductEntity> getByNameProduct(String name) {
+        return productsRepository.findByName(name);  // Retorna uma lista de produtos
+    }
+
+    // get all products
+    public ProductEntity[] getAllProducts() {
+        return productsRepository.findAll().toArray(new ProductEntity[0]);
     }
 }
